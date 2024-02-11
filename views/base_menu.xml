@@ -1,0 +1,11 @@
+<odoo>
+	<menuitem id="real_estate_root_menu" name="Real Estate"/>
+	<menuitem id="properties_menu" name="Properties" parent="real_estate_root_menu"/>
+</odoo>
+
+
+
+<!--  
+access_estate_estate,estate.estate.property,model_estate_property,base.group_user,1,1,1,1
+access_estate_owner,estate.estate.owner,model_estate_owner,base.group_user,1,1,1,1 
+-->
