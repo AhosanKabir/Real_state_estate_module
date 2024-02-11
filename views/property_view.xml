@@ -5,8 +5,10 @@
 		<field name="name">Property tree view</field>
 		<field name="model">property</field>
 		<field name="arch" type="xml">
-			<tree>
+			<tree multi_edit="1">
 				<field name="name"/>
+				<field name="postcode"/>
+				<field name="owner_id"/>
 				<field name="date_availability"/>
 				<field name="selling_price"/>
 				<field name="garden" optional="1"/>
@@ -23,6 +25,9 @@
 		<field name="arch" type="xml">
 			<form action="">
 				<sheet>
+					<header>
+						<field name="state" widget="statusbar" options="{'clickable':1}"/>
+					</header>
 					<div class="oe_title">
 						<label for="name"/>
 						<h1>
@@ -41,6 +46,8 @@
 						</group>
 						
 						<group string="Additional Info.">
+							<field name="owner_id"/>
+							<field name="state"/>
 							<field name="garden_area"/>
 							<field name="bedrooms"/>
 							<field name="garden"/>
@@ -55,6 +62,23 @@
 					</group>
 				</sheet>
 			</form>
+		</field>
+	</record>
+
+
+	<!-- for search  -->
+	<record id="property_view_search" model="ir.ui.view"> 
+		<field name="name">Property search</field>
+		<field name="model">property</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name" />
+				<field name="postcode"/>
+
+				<filter name="is_garden" string="With Garden" domain="[('garden', '=', True)]"/>
+				<filter name="is_not_garden" string="Without Garden" domain="[('garden', '=', False)]"/>
+				<filter name="is_garage" string="With Garage" domain="[('garage', '=', True)]"/>
+			</search>
 		</field>
 	</record>
 
