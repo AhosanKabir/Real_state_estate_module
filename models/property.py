@@ -43,8 +43,21 @@ class Property(models.Model):
 				# print("not valid") , this is for terminal view 
 				raise ValidationError("Please add numbers of bedrooms!")
 
+	# ---------------------------------------- Action Methods -------------------------------------
+			
+	def action_draft(self):
+		for rec in self:
+			rec.state = 'draft'
 
-	# CRUD 
+	def action_pending(self):
+		for rec in self:
+			rec.state = 'pending'
+	
+	def action_sold(self):
+		for rec in self:
+			rec.state = 'sold'
+
+	# ---------------------------------------- CRUD -------------------------------------
 	# @api.model_create_multi
 	# def create(self, vals):
 	# 	res = super(Property, self).create(vals)
@@ -61,3 +74,6 @@ class Property(models.Model):
 	# 	res = super(Property, self).unlink()
 	# 	print('inside delete method')
 	# 	return res
+			
+
+	
