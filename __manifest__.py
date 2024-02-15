@@ -8,7 +8,7 @@
 Estate Property business system 
     """,
 
-    'author': "My Company",
+    'author': "Ahosan",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -18,7 +18,7 @@ Estate Property business system
     'version': '17.0.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','sale'],
 
     # always loaded
     'data': [
@@ -26,7 +26,17 @@ Estate Property business system
 		'views/base_menu.xml',
 		'views/property_view.xml',
 		'views/owner_view.xml',
+		'views/sale_order_view.xml',
+		'views/building_view.xml',
+		'reports/property_report.xml',
     ],
+	
+    'assets':{
+		'web.assets_backend':[
+			'/estate/static/src/css/style.css',
+        ]
+    },
+
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

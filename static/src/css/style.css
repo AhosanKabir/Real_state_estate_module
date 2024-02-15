@@ -1,0 +1,57 @@
+.tree_view_header table thead {
+	background-color: rgb(82, 76, 76) !important;
+}
+
+.tree_view_header table thead >tr >th{
+	color: white !important;
+	font-size: 20px;
+}
+
+
+/* Move Chatter to bottom */
+/* .o_FormRenderer_chatterContainer.o-aside {
+    width: -webkit-fill-available;
+    margin-bottom: 50px;
+} */
+
+
+
+/* Move Chatter to bottom */
+/* .o_form_view.o_xxl_form_view {
+    -webkit-flex-flow: unset;
+    flex-flow: wrap;
+    height: auto !important;
+} */
+
+
+/* ------------------------------------------------ */
+/* .o_form_editable.d-flex{
+	display: grid !important;
+	grid-template-columns: 1fr;
+	height: auto !important;
+	gap: 40px;
+}
+
+.o-mail-Chatter {
+	height: auto;
+	width: 100% !important;
+	max-width: 100%;
+}
+
+.o-mail-Form-chatter.o-aside{
+	width: 100% !important;
+}
+
+.o_form_view .o_form_sheet_bg{
+	max-width: 100% !important;
+} */
+
+/* ------------------------------------------------ */
+
+
+/* inheritance in odoo :   */
+/* 
+   1. Python Inheritance
+   2. Model Inheritance
+   3. View Inheritance 
+*/

@@ -5,7 +5,7 @@
 		<field name="name">Property tree view</field>
 		<field name="model">property</field>
 		<field name="arch" type="xml">
-			<tree multi_edit="1">
+			<tree multi_edit="1" class="tree_view_header">
 				<field name="name"/>
 				<field name="postcode"/>
 				<field name="owner_id"/>
@@ -32,6 +32,7 @@
 
 						<button name="action_pending" type="object" class="btn-secondary" string="Pending" invisible ="state != 'draft'" icon="fa-spinner"/>
 
+						<!-- if i want to add more logic then use attrs : attrs="{'invisible': [('state', '!=', 'pending'), ('selling_price', '&gt;', 0)]}" -->
 						<button name="action_sold" type="object" class="btn-success" string="Sold" invisible ="state != 'pending'" icon="fa-check"/>
 
 						<field name="state" widget="statusbar"/>
@@ -48,6 +49,7 @@
 							<field name="postcode"/>
 							<field name="expected_price"/>
 							<field name="selling_price"/>
+							<field name="diff"/>
 							<field name="bedrooms"/>
 							<field name="Living_area"/>
 							<field name="facades"/>
@@ -55,6 +57,8 @@
 						
 						<group string="Additional Info.">
 							<field name="owner_id"/>
+							<field name="owner_phone"/>
+							<field name="owner_address"/>
 							<field name="state"/>
 							<field name="garden_area"/>
 							<field name="bedrooms"/>
@@ -62,6 +66,7 @@
 							<field name="garden_area"/>
 							<field name="garage"/>
 							<field name="garden_orientation"/>
+							<field name="active"/>
 						</group>
 					</group>
 
@@ -69,6 +74,11 @@
 						<field name="description"/>
 					</group>
 				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids"/>
+					<field name="activity_ids"/>
+					<field name="message_ids"/>
+				</div>
 			</form>
 		</field>
 	</record>
@@ -94,6 +104,8 @@
 		<field name="name">property action</field>
 		<field name="res_model">property</field>
 	</record>
+
+	
 
 	<menuitem 
 		id="property_menu_item"
